@@ -1,0 +1,81 @@
+
+<B1@Button>:
+    font_size: dp(23)
+    size_hint: 0.6, 0.05
+
+<B2@Button>:
+    font_size: dp(23)
+    size_hint: 0.4, 0.05
+
+
+
+
+<MainView>
+    FloatLayout:
+        canvas.before:
+            Rectangle:
+                source: "pics/bg_01.png"
+                size: root.width, root.height
+                pos: self.pos
+        Label:
+            text: "Erster Start"
+            font_size: dp(100)
+            size_hint: 0.5,0.1
+            pos_hint: {"x":0.25, "y":0.8}
+        B1:
+            text: "Fertig"
+            color: (0,0,0,1)
+            pos_hint: {"x":0.2, "y":0.025}
+            on_release: app.change_view("viewone", "left")
+
+        Label:
+            text: "Hallo, es freut mich, dass Du mir \nhelfen willst.\nSchau auf der Checkliste,\nob Du alles hast und\ndrücke dann den Startbutton."
+            color: (0,0,0,1)
+            size_hint: 0.5,0.1
+            font_size: dp(10)
+            pos_hint: {"x":0.05, "y":0.5}
+
+
+<ViewOne>:
+    FloatLayout:
+        canvas.before:
+            Rectangle:
+                source: "pics/bg_02.png"
+                size: root.width, root.height
+                pos: self.pos
+        Label:
+            text: "ViewOne"
+            color: 0.9, 0.9, 0.9
+            size_hint: 0.5,0.1
+            pos_hint: {"x":0.25, "y":0.8}
+
+        B2:
+            text: "zurück"
+            color: (0,0,0,1)
+            pos_hint: {"x":0.05, "y":0.025}
+            on_release: app.change_view("mainview", "right")
+        B2:
+            text: "weiter"
+            color: (0,0,0,1)
+            pos_hint: {"x":0.55, "y":0.025}
+            on_release: app.change_view("viewtwo", "left")
+
+
+<ViewTwo>:
+    FloatLayout:
+        canvas.before:
+            Rectangle:
+                source: "pics/a_bg.png"
+                size: root.width, root.height
+        Label:
+            text: "ViewTwo"
+            color: 0.9, 0.9, 0.9
+            size_hint: 0.5,0.1
+            pos_hint: {"x":0.25, "y":0.8}
+
+        B2:
+            text: "zurück"
+            color: (0,0,0,1)
+            pos_hint: {"x":0.3, "y":0.025}
+            on_release: app.change_view("viewone", "right")
+
