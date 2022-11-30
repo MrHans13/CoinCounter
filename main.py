@@ -3,8 +3,8 @@ from kivy.config import Config
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
 
-Config.set('graphics', 'width', '720')
-Config.set('graphics', 'height', '1280')
+Config.set('graphics', 'width', '400')
+Config.set('graphics', 'height', '1000')
 
 
 class MainView(FloatLayout):
